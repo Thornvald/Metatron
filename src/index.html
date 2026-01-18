@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metatron</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- Title Bar -->
+  <div class="title-bar">
+    <div class="title-bar-drag" data-tauri-drag-region>
+      <span class="app-title">METATRON</span>
+    </div>
+    <div class="window-controls">
+      <button class="control-btn minimize" id="minimize-btn">─</button>
+      <button class="control-btn maximize" id="maximize-btn">□</button>
+      <button class="control-btn close" id="close-btn">×</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo-section">
+        <div class="logo">
+          <svg viewBox="0 0 100 100" class="metatron-symbol">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="1"/>
+            <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="15" y1="15" x2="85" y2="85" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="85" y1="15" x2="15" y2="85" stroke="currentColor" stroke-width="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="files">
+          <span class="mode-icon">◫</span>
+          <span class="mode-text">File Listing</span>
+        </button>
+        <button class="mode-btn" data-mode="hierarchy">
+          <span class="mode-icon">⊞</span>
+          <span class="mode-text">Hierarchy</span>
+        </button>
+      </div>
+
+      <div class="controls-section">
+        <div class="control-group">
+          <label>Source Directory</label>
+          <div class="input-row">
+            <input type="text" id="source-path" placeholder="Select folder..." readonly>
+            <button class="btn-icon" id="browse-source">⋯</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>File Extension</label>
+          <input type="text" id="extension" placeholder="e.g., .cpp .h or .txt, .md">
+        </div>
+
+        <div class="control-group">
+          <label>Output Directory</label>
+          <div class="input-row">
+            <input type="text" id="output-path" placeholder="For saving console..." readonly>
+            <button class="btn-icon" id="browse-output">⋯</button>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="execute-btn">
+          <span class="btn-glow"></span>
+          <span class="btn-text">Execute</span>
+        </button>
+      </div>
+
+      <div class="console-controls">
+        <button class="btn-secondary" id="copy-btn">Copy</button>
+        <button class="btn-secondary" id="save-btn">Save</button>
+        <button class="btn-secondary" id="clear-btn">Clear</button>
+      </div>
+
+      <div class="status-bar">
+        <span class="status-dot"></span>
+        <span id="status-text">Ready</span>
+      </div>
+    </div>
+
+    <!-- Console Area -->
+    <div class="console-area">
+      <div class="console-header">
+        <span class="console-title">Console Output</span>
+        <span class="console-info" id="file-count"></span>
+      </div>
+      <div class="console-content" id="console">
+        <div class="welcome-message">
+          <div class="welcome-symbol">✧</div>
+          <div class="welcome-text">Welcome to Metatron</div>
+          <div class="welcome-sub">Select a directory and execute to begin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
