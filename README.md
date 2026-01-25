@@ -15,6 +15,9 @@ A lightweight file explorer and hierarchy viewer built with Tauri.
 - **File Listing** - Recursively list all files in a directory, filtered by extension
 - **Hierarchy View** - Visualize folder structure as a clean tree view
 - **Multiple Extension Filtering** - Filter by multiple file types at once
+- **Filter by Type Toggle** - Switch between file filtering or folders-only listing
+- **Ignored File Types** - Exclude unwanted extensions from results
+- **Ignored Folders** - Pick one or more folders to skip during scans
 - **Console Output** - View results in a built-in console
 - **Copy & Save** - Copy to clipboard or export console output to `.txt` files
 - **Config Persistence** - Remembers your output directory between sessions
@@ -29,6 +32,11 @@ A lightweight file explorer and hierarchy viewer built with Tauri.
 | `.txt, .md, .json` | Multiple (comma-separated) |
 | `.cpp, .h .hpp` | Mixed separators |
 | *(empty)* | All files |
+
+## Ignore Filters
+
+- **Ignored File Types**: Add extensions like `.log .tmp` to skip them.
+- **Ignored Folders**: Use the picker to select one or more folders; all selected folders (and their contents) are excluded.
 
 ## Tech Stack
 
