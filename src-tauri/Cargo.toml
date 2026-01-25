@@ -1,6 +1,6 @@
 [package]
 name = "metatron"
-version = "1.0.3"
+version = "4.5.4"
 description = "Metatron - File Explorer & Hierarchy Viewer"
 authors = ["Metatron"]
 edition = "2021"
