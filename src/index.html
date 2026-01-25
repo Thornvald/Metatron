@@ -63,6 +63,26 @@
         <div class="control-group">
           <label>File Extension</label>
           <input type="text" id="extension" placeholder="e.g., .cpp .h or .txt, .md">
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-by-type" checked>
+              <span>Filter by type</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Ignored File Types</label>
+          <input type="text" id="ignored-extensions" placeholder="e.g., .log .tmp or .png, .jpg">
+        </div>
+
+        <div class="control-group">
+          <label>Ignored Folders</label>
+          <div class="input-row">
+            <input type="text" id="ignored-folders-display" placeholder="No folders selected" readonly>
+            <button class="btn-icon" id="add-ignored-folder">＋</button>
+          </div>
+          <div class="pill-list" id="ignored-folders-list"></div>
         </div>
 
         <div class="control-group">
@@ -75,7 +95,7 @@
 
         <button class="btn-primary" id="execute-btn">
           <span class="btn-glow"></span>
-          <span class="btn-text">Execute</span>
+          <span class="btn-text">Scan</span>
         </button>
       </div>
 
